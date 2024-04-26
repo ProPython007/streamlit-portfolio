@@ -1,9 +1,12 @@
 import re
+import os
 import math
+import smtplib
 import requests
 from PIL import Image
 import streamlit as st
 from bs4 import BeautifulSoup
+from email.mime.text import MIMEText
 from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 
@@ -307,23 +310,31 @@ if selected == 'Contact':
     lc, rc = st.columns((2, 1))
     with lc:
         st.header(":mailbox: Get In Touch With Me!")
-        contact_form = """
-        <form action="https://formsubmit.io/send/ironheartz367@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" placeholder="Your message here"></textarea>
-            <button type="submit">Send</button>
-        </form>
-        """
+        # Taking inputs
+        email_sender = 'djangoatservice@gmail.com'
+        sender = st.text_input('Your Name/Contact')
+        email_receiver = 'ironheartz367@gmail.com'   #st.text_input('To')
+        subject = st.text_input('Subject')
+        body = st.text_area('Your Message')
+        body += f'\n\n\nThis email is sent by: {sender}'
+        # password = st.text_input('Password', type="password") 
 
-        st.markdown(contact_form, unsafe_allow_html=True)
+        if st.button("Submit"):
+            try:
+                msg = MIMEText(body)
+                msg['From'] = email_sender
+                msg['To'] = email_receiver
+                msg['Subject'] = f'STREAMLIT PROTFOLIO: {subject}'
 
-        def local_css(file_name):
-            with open(file_name) as f:
-                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.starttls()
+                server.login(email_sender, os.environ['DJANGO_HOST_EMAIL_PASSWORD'])
+                server.sendmail(email_sender, email_receiver, msg.as_string())
+                server.quit()
 
-        local_css("style/style.css")
+                st.success('Email sent successfully! 🚀')
+            except Exception as e:
+                st.error(f"Something went wrong!: {e}")
 
     with rc:
         st_lottie(lottier_contact)
