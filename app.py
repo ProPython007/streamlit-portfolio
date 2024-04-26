@@ -303,13 +303,12 @@ if selected == 'Projects':
 
 
 if selected == 'Contact':
-    st.header('Get in touch')
+    st.header(":mailbox: Get In Touch With Me!")
     st.write('##')
     st.write('##')
 
     lc, rc = st.columns((2, 1))
     with lc:
-        st.header(":mailbox: Get In Touch With Me!")
         # Taking inputs
         email_sender = 'djangoatservice@gmail.com'
         sender = st.text_input('Your Name/Contact')
