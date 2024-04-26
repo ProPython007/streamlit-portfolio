@@ -1,6 +1,7 @@
 import re
 import math
 import requests
+from PIL import Image
 import streamlit as st
 from bs4 import BeautifulSoup
 from streamlit_lottie import st_lottie
@@ -17,7 +18,7 @@ hide_st_style = '''
         header {visibility: hidden;}
     </style>
 '''
-# st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
 st.write('##')
 
 
@@ -117,6 +118,14 @@ def load_lottieur(url):
 
 
 lottier_icon = load_lottieur('https://lottie.host/90a6f7a7-36ce-4768-bc5e-d469d7a620ed/qhZaWE5nuU.json')
+lottier_contact = load_lottieur('https://lottie.host/65f1306f-31d9-4125-b4f9-56f89e687587/EZDFZTnkVw.json')
+p1 = Image.open('pp1.png')
+p2 = Image.open('pp2.png')
+p3 = Image.open('pp3.png')
+p4 = Image.open('pp4.png')
+p5 = Image.open('pp5.png')
+p6 = Image.open('pp6.png')
+p7 = Image.open('pp7.png')
 
 
 st.subheader('Hey Guys :wave:')
@@ -129,7 +138,7 @@ st.write('---')
 with st.container():
     selected = option_menu(
         menu_title = None,
-        options = ['Background', 'Projects', 'Contacts'],
+        options = ['Background', 'Projects', 'Contact'],
         icons = ['person', 'code-slash', 'chat-left-text-fill'],
         orientation = 'horizontal'
     )
@@ -153,6 +162,14 @@ if selected == 'Background':
         st.write('##')
         social_media_icons = SocialMediaIcons(social_media_links)
         social_media_icons.render(justify_content='start')
+
+        st.write('##')
+        st.write('##')
+        URL_STRING = "https://drive.google.com/file/d/1pDij4xtBsgeXci6AbS_27qMx8cg0OrR9/view?usp=drive_link"
+        st.markdown(
+            f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #ff4b4b; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Get Resume</a>',
+            unsafe_allow_html=True
+        )
 
     with col2:
         st_lottie(lottier_icon)
@@ -201,10 +218,118 @@ if selected == 'Background':
             - WON GOLD MEDAL IN 50TH KVS U-19 NATIONAL CHESS CHAMPIONSHIP @[link](https://chess-results.com/tnr449030.aspx?lan=1&art=1&rd=9)
                 - 2019-20
             ''')
-        st.write('---')
+    st.write('---')
+    st.write('##')
+
+
+if selected == 'Projects':
+    st.title('My Projects')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p1)
+    with col7:
+        st.subheader('JAPAN REAL ESTATE VALUATION MODEL')
+        st.write('Python, Tensorflow, Plotly, Pandas, Streamlit')
         st.write('##')
+        st.markdown('[GITHUB](https://github.com/ProPython007/JAPAN-Real-Estate-Valuation)')
+        st.markdown('[SITE](https://jp-real-estate-valuation.streamlit.app/)')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p2)
+    with col7:
+        st.subheader('UPSTOX PORTFOLIO DASHBOARD')
+        st.write('Python, Streamlit, Pandas, API')
+        st.write('##')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/UpstoxAnalyser)')
+        st.markdown('[SITE](https://upstoxapi.streamlit.app/)')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p3)
+    with col7:
+        st.subheader('ANN IMPLEMENTATION')
+        st.write('Python, Numpy')
+        st.write('##')
+        st.write('##')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/basic_nural_network)')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p4)
+    with col7:
+        st.subheader('ALL IN ONE DEHAZING NET')
+        st.write('Python, Tensorflow, CNN, Streamlit, Numpy')
+        st.write('##')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/AOD-NET-Preview)')
+        st.markdown('[SITE](https://aod-net-preview.streamlit.app/)')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p5)
+    with col7:
+        st.subheader('CRUD IMPLEMENTATION WITH DJANGO')
+        st.write('Python, Django, Bootstrap')
+        st.write('##')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/ArticleSite_CRUD_DJANGO)')
+        st.markdown('[SITE](https://propython007.pythonanywhere.com/)')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p6)
+    with col7:
+        st.subheader('FLASK WEATHER APP')
+        st.write('Python, Flask, API')
+        st.write('##')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/flaskWeather_app_v0.01)')
+        st.markdown('[SITE](https://wtell.onrender.com/)')
+    st.write('##')
+    col5, col6, col7 = st.columns((4, 1, 10))
+    with col5:
+        st.image(p7)
+    with col7:
+        st.subheader('IMPLEMENTING DFS THROUGH RAT IN MAZE PUZZLE')
+        st.write('C Programming')
+        st.write('##')
+        st.write('##')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/rat_in_maze)')
+
+    st.write('---')
+    st.write('##')
 
 
+if selected == 'Contact':
+    st.header('Get in touch')
+    st.write('##')
+    st.write('##')
+
+    lc, rc = st.columns((2, 1))
+    with lc:
+        st.header(":mailbox: Get In Touch With Me!")
+        contact_form = """
+        <form action="https://formsubmit.co/ironheartz367@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message here"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        """
+
+        st.markdown(contact_form, unsafe_allow_html=True)
+
+        def local_css(file_name):
+            with open(file_name) as f:
+                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+        local_css("style/style.css")
+
+    with rc:
+        st_lottie(lottier_contact)
+
+    st.write('---')
+    st.write('##')
 
 
 
