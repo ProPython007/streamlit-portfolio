@@ -168,7 +168,7 @@ if selected == 'Background':
 
         st.write('##')
         st.write('##')
-        URL_STRING = "https://drive.google.com/file/d/1pDij4xtBsgeXci6AbS_27qMx8cg0OrR9/view?usp=drive_link"
+        URL_STRING = "https://drive.google.com/file/d/1-T3pDLSBdn-ny6TYg0I7Xqo0KesPZ1VT/view?usp=sharing"
         st.markdown(
             f'<a href="{URL_STRING}" style="display: inline-block; padding: 12px 20px; background-color: #ff4b4b; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Get Resume</a>',
             unsafe_allow_html=True
@@ -184,9 +184,9 @@ if selected == 'Background':
         with col3:
             st.subheader('''
             Education
-            - IIIT
+            - IIIT Kalyani
                 - Bachelor of Technology (CSE)
-                - Grade: 9.2      
+                - Grade: 9.15    
             - Kendriya Vidyalaya No.1 Ishapore
                 - CBSE class 12th
                 - Grade: 8.4
@@ -196,11 +196,13 @@ if selected == 'Background':
             - Core Programming Concepts:
                 - Python, C++, OOP, DSA
             - Web Development:
-                - Django/REST API, Flask, HTML, CSS, Bootstrap, Streamlit
+                - Django/REST Framework, Flask, HTML, CSS, Bootstrap, Streamlit
             - Machine Learning & Data Science:
                 - Tensorflow, Scikit-learn, Pandas, Numpy, Matplotlib, Plotly
             - Web Scraping:
                 - Requests, BeautifulSoup, Playwright
+            - GUI Development:
+                - Tkinter, Flet
             ''')
         with col4:
             st.subheader('''
@@ -208,7 +210,7 @@ if selected == 'Background':
             - Freelancer @[profile](https://www.freelancer.com/u/propython007)
                 - May 2022 - Present
                 - Remote
-                - Description: Executed diverse projects leveraging my expertise, ensuring on-time and quality delivery. Accomplished 40+ projects across industries, earning a top 5/5 rating from satisfied clients.
+                - Description: Executed diverse projects leveraging my expertise, ensuring on-time and quality delivery. Accomplished 100+ projects across industries, earning a top 5/5 rating from satisfied clients.
             ''')
             st.subheader('''
             INVOLVEMENT
@@ -234,9 +236,10 @@ if selected == 'Projects':
     with col7:
         st.subheader('JAPAN REAL ESTATE VALUATION MODEL')
         st.write('Python, Tensorflow, Plotly, Pandas, Streamlit')
-        st.write('##')
-        st.markdown('[GITHUB](https://github.com/ProPython007/JAPAN-Real-Estate-Valuation)')
-        st.markdown('[SITE](https://jp-real-estate-valuation.streamlit.app/)')
+        # st.write('##')
+        st.write('Developed a comprehensive model to assess real estate investment opportunities across Japanese prefectures. Leveraged Convolutional Neural Networks (CNN), Regression Analysis, and Time-Series Forecasting for predictive analytics.')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/JAPAN-Real-Estate-Valuation)  |  [DEPLOY LINK](https://jp-real-estate-valuation.streamlit.app/)')
+        # st.markdown('[SITE](https://jp-real-estate-valuation.streamlit.app/)')
     st.write('##')
     col5, col6, col7 = st.columns((4, 1, 10))
     with col5:
@@ -244,9 +247,10 @@ if selected == 'Projects':
     with col7:
         st.subheader('UPSTOX PORTFOLIO DASHBOARD')
         st.write('Python, Streamlit, Pandas, API')
-        st.write('##')
-        st.markdown('[GITHUB REPO](https://github.com/ProPython007/UpstoxAnalyser)')
-        st.markdown('[SITE](https://upstoxapi.streamlit.app/)')
+        # st.write('##')
+        st.write('Created an interactive dashboard to visualize and analyze Upstox portfolio performance, with integrated goal-setting and tracking features.')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/UpstoxAnalyser)  |  [DEPLOY LINK](https://upstoxapi.streamlit.app/)')
+        # st.markdown('[SITE](https://upstoxapi.streamlit.app/)')
     st.write('##')
     col5, col6, col7 = st.columns((4, 1, 10))
     with col5:
@@ -255,7 +259,7 @@ if selected == 'Projects':
         st.subheader('ANN IMPLEMENTATION')
         st.write('Python, Numpy')
         st.write('##')
-        st.write('##')
+        st.write('Engineered a fully-custom neural network from scratch to perform regression tasks, bypassing traditional machine learning libraries.')
         st.markdown('[GITHUB REPO](https://github.com/ProPython007/basic_nural_network)')
     st.write('##')
     col5, col6, col7 = st.columns((4, 1, 10))
@@ -264,9 +268,10 @@ if selected == 'Projects':
     with col7:
         st.subheader('ALL IN ONE DEHAZING NET')
         st.write('Python, Tensorflow, CNN, Streamlit, Numpy')
-        st.write('##')
-        st.markdown('[GITHUB REPO](https://github.com/ProPython007/AOD-NET-Preview)')
-        st.markdown('[SITE](https://aod-net-preview.streamlit.app/)')
+        # st.write('##')
+        st.write('Designed a robust CNN-based solution to effectively remove haze from images, enhancing clarity and visibility.')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/AOD-NET-Preview)  |  [DEPLOY LINK](https://aod-net-preview.streamlit.app/)')
+        # st.markdown('[SITE](https://aod-net-preview.streamlit.app/)')
     st.write('##')
     col5, col6, col7 = st.columns((4, 1, 10))
     with col5:
@@ -274,9 +279,10 @@ if selected == 'Projects':
     with col7:
         st.subheader('CRUD IMPLEMENTATION WITH DJANGO')
         st.write('Python, Django, Bootstrap')
-        st.write('##')
-        st.markdown('[GITHUB REPO](https://github.com/ProPython007/ArticleSite_CRUD_DJANGO)')
-        st.markdown('[SITE](https://propython007.pythonanywhere.com/)')
+        # st.write('##')
+        st.write('Implemented full CRUD functionality for an article posting platform using Django, featuring responsive design with Bootstrap.')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/ArticleSite_CRUD_DJANGO)  |  [DEPLOY LINK](https://propython007.pythonanywhere.com/)')
+        # st.markdown('[SITE](https://propython007.pythonanywhere.com/)')
     st.write('##')
     col5, col6, col7 = st.columns((4, 1, 10))
     with col5:
@@ -284,9 +290,10 @@ if selected == 'Projects':
     with col7:
         st.subheader('FLASK WEATHER APP')
         st.write('Python, Flask, API')
-        st.write('##')
-        st.markdown('[GITHUB REPO](https://github.com/ProPython007/flaskWeather_app_v0.01)')
-        st.markdown('[SITE](https://wtell.onrender.com/)')
+        # st.write('##')
+        st.write('Developed a web application to retrieve real-time weather data using OpenWeather API, with dynamic data visualization.')
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/flaskWeather_app_v0.01)  |  [DEPLOY LINK](https://wtell.onrender.com/)')
+        # st.markdown('[SITE](https://wtell.onrender.com/)')
     st.write('##')
     col5, col6, col7 = st.columns((4, 1, 10))
     with col5:
@@ -295,7 +302,7 @@ if selected == 'Projects':
         st.subheader('IMPLEMENTING DFS THROUGH RAT IN MAZE PUZZLE')
         st.write('C Programming')
         st.write('##')
-        st.write('##')
+        st.write('Implemented a Depth-First Search (DFS) algorithm with real-time terminal-based visualization for solving the Rat-in-a-Maze puzzle.')
         st.markdown('[GITHUB REPO](https://github.com/ProPython007/rat_in_maze)')
 
     st.write('---')
@@ -311,7 +318,7 @@ if selected == 'Contact':
     with lc:
         # Taking inputs
         email_sender = 'djangoatservice@gmail.com'
-        sender = st.text_input('Your Name/Contact')
+        sender = st.text_input('Your Name/Contact (Mention your email for follow up)')
         email_receiver = 'ironheartz367@gmail.com'   #st.text_input('To')
         subject = st.text_input('Subject')
         body = st.text_area('Your Message')
@@ -340,6 +347,3 @@ if selected == 'Contact':
 
     st.write('---')
     st.write('##')
-
-
-
