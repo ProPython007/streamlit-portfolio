@@ -11,6 +11,10 @@ from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 
 
+EMAIL_APP_SENDER = "xxx"
+EMAIL_APP_RECIEVER = "xxx"
+EMAIL_APP_PASS = "xxx"
+
 # Settings:
 ## Extra CSS:
 st.set_page_config(page_title='Sayan Karmakar', page_icon=':computer:', layout='wide')
@@ -129,6 +133,7 @@ p4 = Image.open('pp4.png')
 p5 = Image.open('pp5.png')
 p6 = Image.open('pp6.png')
 p7 = Image.open('pp7.png')
+p8 = Image.open('pp8.png')
 
 
 st.subheader('Hey Guys :wave:')
@@ -196,9 +201,9 @@ if selected == 'Background':
             - Core Programming Concepts:
                 - Python, C++, OOP, DSA
             - Web Development:
-                - Django/REST Framework, Flask, HTML, CSS, Bootstrap, Streamlit
+                - Django/REST Framework, Flask, HTML, CSS, Bootstrap, Streamlit, React
             - Machine Learning & Data Science:
-                - Tensorflow, Scikit-learn, Pandas, Numpy, Matplotlib, Plotly
+                - Tensorflow, Scikit-learn, OpenCV, Pandas, Numpy, Matplotlib, Plotly
             - Web Scraping:
                 - Requests, BeautifulSoup, Playwright
             - GUI Development:
@@ -241,6 +246,24 @@ if selected == 'Projects':
         st.markdown('[GITHUB REPO](https://github.com/ProPython007/JAPAN-Real-Estate-Valuation)  |  [DEPLOY LINK](https://jp-real-estate-valuation.streamlit.app/)')
         # st.markdown('[SITE](https://jp-real-estate-valuation.streamlit.app/)')
     st.write('##')
+    # st.write('##')
+    # st.write('##')
+    # st.write('##')
+    
+    ncol1, ncol2, ncol3 = st.columns((4, 1, 10))
+    with ncol1:
+        st.image(p8)
+    with ncol3:
+        st.subheader('KCDetector')
+        st.write('Tensorflow, OpenCV, Flask, Flet')
+        # st.write('##')
+        st.write('KCDetector is a low-cost, portable device using a paper test strip and Android app to detect creatinine levels, enabling kidney disease diagnosis and providing an accessible solution for resource-limited healthcare settings.')
+        # st.write('In collaboration with: Dr. Sudip Chattopadhyay | AIIMS Kalyani, Oishila Bandyopadhyay | IIIT Kalyani')
+        
+        st.markdown('[GITHUB REPO](https://github.com/ProPython007/KCDetector)')
+        # st.markdown('[SITE](https://jp-real-estate-valuation.streamlit.app/)')
+    st.write('##')
+    
     col5, col6, col7 = st.columns((4, 1, 10))
     with col5:
         st.image(p2)
@@ -317,9 +340,9 @@ if selected == 'Contact':
     lc, rc = st.columns((2, 1))
     with lc:
         # Taking inputs
-        email_sender = 'djangoatservice@gmail.com'
+        email_sender = EMAIL_APP_SENDER
         sender = st.text_input('Your Name/Contact (Mention your email for follow up)')
-        email_receiver = 'ironheartz367@gmail.com'   #st.text_input('To')
+        email_receiver = EMAIL_APP_RECIEVER   #st.text_input('To')
         subject = st.text_input('Subject')
         body = st.text_area('Your Message')
         body += f'\n\n\nThis email is sent by: {sender}'
@@ -334,11 +357,11 @@ if selected == 'Contact':
 
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
-                server.login(email_sender, os.environ['DJANGO_HOST_EMAIL_PASSWORD'])
+                server.login(email_sender, EMAIL_APP_PASS)
                 server.sendmail(email_sender, email_receiver, msg.as_string())
                 server.quit()
 
-                st.success('Email sent successfully! 🚀')
+                st.success('Email sent successfully! ðŸš€')
             except Exception as e:
                 st.error(f"Something went wrong!: {e}")
 
